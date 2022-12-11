@@ -1,8 +1,16 @@
-import { Container } from "@nextui-org/react";
+import { Spacer } from "@nextui-org/react";
 import { Mangalist } from "../base/features";
 
 export const Content = () => (
-  <Container>
+  <>
     <Mangalist />
-  </Container>
+    <Spacer />
+
+    <Mangalist />
+    <Spacer />
+
+    <Mangalist />
+    <Spacer />
+
+  </>
 );

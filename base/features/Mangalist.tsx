@@ -1,41 +1,31 @@
-import { Button, Card, Col, Grid, Modal, Text } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  Col,
+  Divider,
+  Grid,
+  Modal,
+  Text,
+} from "@nextui-org/react";
 import React from "react";
 
 export const Mangalist = () => {
+  const manga: string[] = ["some", "some", "some", "some", "some", "some", "some", "some" ,"some", "some", "some" , "some"];
   return (
     <>
       <Card>
+        <Card.Header>
+          <Text h3 b color="white">
+            Projects
+          </Text>
+        </Card.Header>
+        <Divider />
         <Grid.Container justify="center" gap={2} direction="row">
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
-          <Grid>
-            <MangaCard />
-          </Grid>
+          {manga.map((_, index) => (
+            <Grid key={index} xs={12} md={2}>
+              <MangaCard />
+            </Grid>
+          ))}
         </Grid.Container>
       </Card>
     </>
@@ -53,10 +43,11 @@ const MangaCard = () => {
   return (
     <>
       <Card
-        onClick={handler}
+        variant="bordered"
+        onPress={handler}
         isHoverable
         isPressable
-        css={{ maxWidth: "200px" }}
+        css={{ maxWidth: "100%" }}
       >
         <Card.Image
           src="https://komikcast.site/wp-content/uploads/2021/11/FEMixWJaIAA4cxF-e1636975753391.jpg"
@@ -87,6 +78,7 @@ const MangaCard = () => {
       <Modal
         closeButton
         blur
+        width="600px"
         aria-labelledby="list-chapter"
         open={visible}
         onClose={closeHandler}
@@ -99,16 +91,34 @@ const MangaCard = () => {
             </Text>
           </Text>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
+        <Modal.Body>
+          <ChapterTable />
+        </Modal.Body>
         <Modal.Footer>
-          <Button auto flat color="error" onClick={closeHandler}>
+          <Button auto flat color="error" onPress={closeHandler}>
             Close
-          </Button>
-          <Button auto onClick={closeHandler}>
-            Sign in
           </Button>
         </Modal.Footer>
       </Modal>
+    </>
+  );
+};
+
+const ChapterTable = () => {
+  return (
+    <>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
+      <Text>Chapter 1</Text>
     </>
   );
 };
