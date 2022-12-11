@@ -7,7 +7,11 @@ type LayoutProps = {
 };
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <Container>{children}</Container>;
+  return (
+    <>
+      <Container>{children}</Container>
+    </>
+  );
 };
 
 export default dynamic(() => Promise.resolve(Layout), { ssr: false });
