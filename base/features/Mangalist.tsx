@@ -1,4 +1,5 @@
 import { Card, Col, Divider, Grid, Row, Spacer, Text } from "@nextui-org/react";
+import { useRouter } from "next/router";
 import React from "react";
 
 export const Mangalist = () => {
@@ -40,10 +41,12 @@ export const Mangalist = () => {
 };
 
 const MangaCard = () => {
+  const router = useRouter();
   return (
     <>
       <Row gap={0}>
         <Card
+          onPress={() => router.push("/detail/manga/1")}
           variant="bordered"
           isHoverable
           isPressable
