@@ -9,7 +9,7 @@ type LayoutProps = {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Container>{children}</Container>
+      <Container gap={0}>{children}</Container>
     </>
   );
 };
